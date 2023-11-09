@@ -7,35 +7,34 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script>
-     var re;
-    function changevalue(){
+    function submit(){
         var opt=document.getElementById("opt").value;
         var txt1=document.getElementById("txt1").value;
         var txt2=document.getElementById("txt2").value;
-        
-       
+        var result=document.getElementById("result");
+        var re;
         switch(opt)
         {
             case "Addition":
              re=   parseFloat(txt1) + parseFloat(txt2);
+             result.innerHTML=`Result :  ${re}`;
              break;
 
              case "Substraction":
              re=   txt1-txt2;
+             result.innerHTML=`Result :  ${re}`;
              break;
 
              case "Multiplication":
              re=   txt1*txt2;
+             result.innerHTML=`Result :  ${re}`;
              break;
 
              case "Division":
              re=   txt1/txt2;
+             result.innerHTML=`Result :  ${re}`;
              break;
         }
-    }
-    function submit(){
-        var result=document.getElementById("result");
-        result.innerHTML=`Result : ${re}`;
     }
 </script>
 </head>
@@ -56,7 +55,7 @@
             <br>
             <div>
                 <span><b>Select Operator :-</b></span>
-                <select  id="opt" onchange="changevalue()">
+                <select  id="opt">
                     <option>Select Operator</option>
                     <option>Addition</option>
                     <option>Substraction</option>
