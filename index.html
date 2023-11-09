@@ -35,11 +35,12 @@
     }
     function submit(){
         var result=document.getElementById("result");
-        result.innerHTML=re;
+        result.innerHTML=`Result :- ${re}`;
     }
 </script>
 </head>
 <body class="container-fluid ">
+    <h2 align="center" class="mt-4">Calculator</h2>
     <div class="d-flex justify-content-around mt-5">
         <div>
             <div>
@@ -56,13 +57,14 @@
             <div>
                 <span><b>Select Operator :-</b></span>
                 <select  id="opt" onchange="changevalue()">
+                    <option>Select Operator</option>
                     <option>Addition</option>
                     <option>Substraction</option>
                     <option>Multiplication</option>
                     <option>Division</option>
                 </select>
             </div>
-            <div class="mt-4 text-center">
+            <div class="mt-5 text-center">
                 <button class="btn btn-primary" onclick="submit()">Submit</button>
             </div>
         </div>
